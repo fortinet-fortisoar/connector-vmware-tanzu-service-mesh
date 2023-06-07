@@ -1,0 +1,1951 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+      "@type": "WorkflowCollection",
+      "name": "Sample - VMware Tanzu Service Mesh - 1.0.0",
+      "description": "VMware Tanzu\u00ae Service Mesh\u2122 is VMware's enterprise-class service mesh solution that provides consistent control and security for microservices, end users, and data\u2014across all your clusters and clouds\u2014in the most demanding multicluster and multicloud environments.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Vmware",
+        "vmware-tanzu-service-mesh"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "1070ef25-9ab2-43c3-9a28-b0fb85687386",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Creates an cluster in VMware Tanzu Service Mesh based on the cluster ID and other input parameters that you have specified.",
+          "name": "Create Cluster",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/87c50ba8-699e-4262-8660-cefe18205482",
+          "steps": [
+            {
+              "uuid": "87c50ba8-699e-4262-8660-cefe18205482",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "bb9083bc-54d8-43de-8e51-28a042ef618d",
+                "title": "VMware Tanzu Service Mesh: Create Cluster",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "2e66ff0a-835b-4fd3-aef9-6a1bc0f04620",
+              "@type": "WorkflowStep",
+              "name": "Create Cluster",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": {
+                  "autoInstallServiceMesh": true
+                },
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "create_cluster",
+                "operationTitle": "Create Cluster",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f1331df1-6f2b-4c89-b977-fd9013d36cc4",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Cluster",
+              "sourceStep": "/api/3/workflow_steps/87c50ba8-699e-4262-8660-cefe18205482",
+              "targetStep": "/api/3/workflow_steps/2e66ff0a-835b-4fd3-aef9-6a1bc0f04620"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "8d2ad643-047b-4309-8433-c712717ecfa0",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Generate a security token for a cluster. This token is used to establish a secure connection between Tanzu Service Mesh and the cluster while the cluster is onboarded.",
+          "name": "Generate Security Token for Cluster",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/5e96b7fc-77a2-400d-a86d-ed1aa2cea8c6",
+          "steps": [
+            {
+              "uuid": "5e96b7fc-77a2-400d-a86d-ed1aa2cea8c6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "42d00157-e30d-4a82-aefb-fabb2bb6e882",
+                "title": "VMware Tanzu Service Mesh: Generate Security Token for Cluster",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "cc22ed58-dfe1-4994-9a62-96ea9dd78159",
+              "@type": "WorkflowStep",
+              "name": "Generate Security Token for Cluster",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "generate_security_token_for_cluster",
+                "operationTitle": "Generate Security Token for Cluster",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "c46236b1-5d58-48d2-83c1-1a1ba9f26ba0",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Generate Security Token for Cluster",
+              "sourceStep": "/api/3/workflow_steps/5e96b7fc-77a2-400d-a86d-ed1aa2cea8c6",
+              "targetStep": "/api/3/workflow_steps/cc22ed58-dfe1-4994-9a62-96ea9dd78159"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "16431bc9-ae54-4cb2-a9ec-ccb6c87f34d2",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Install Tanzu Service Mesh or upgrade the version of Tanzu Service Mesh on a cluster. ",
+          "name": "Install/Upgrade Tanzu Service Mesh Version on Cluster",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/ce595374-a20d-48e1-9609-db34209de629",
+          "steps": [
+            {
+              "uuid": "ce595374-a20d-48e1-9609-db34209de629",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "849808b7-ef8d-4845-900a-333655783b4c",
+                "title": "VMware Tanzu Service Mesh: Install/Upgrade Tanzu Service Mesh Version on Cluster",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "4ec28644-c69f-4b6e-ba05-d7e6e565fbb1",
+              "@type": "WorkflowStep",
+              "name": "Install/Upgrade Tanzu Service Mesh Version on Cluster",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "upgrade_tanzu_service_mesh_version_on_cluster",
+                "operationTitle": "Install/Upgrade Tanzu Service Mesh Version on Cluster",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "5fbdba7c-9487-42e2-a6e7-b9d25c5939f4",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Install/Upgrade Tanzu Service Mesh Version on Cluster",
+              "sourceStep": "/api/3/workflow_steps/ce595374-a20d-48e1-9609-db34209de629",
+              "targetStep": "/api/3/workflow_steps/4ec28644-c69f-4b6e-ba05-d7e6e565fbb1"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ad5dd4dd-18c5-45a2-b7a5-a8bf7c4947bb",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Retrieve a list of the clusters onboarded to Tanzu Service Mesh.",
+          "name": "Get Clusters List",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/27812a2b-a43e-45cf-aed9-4e125650e461",
+          "steps": [
+            {
+              "uuid": "27812a2b-a43e-45cf-aed9-4e125650e461",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "35244ff4-286e-41af-8cb9-31e9f156fe04",
+                "title": "VMware Tanzu Service Mesh: Get Clusters List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "9dc8dd5c-5fb8-408c-8c81-c782a12f5ee5",
+              "@type": "WorkflowStep",
+              "name": "Get Clusters List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "get_clusters",
+                "operationTitle": "Get Clusters List",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f31eb2f6-203e-47c8-8426-356220a209a3",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Clusters List",
+              "sourceStep": "/api/3/workflow_steps/27812a2b-a43e-45cf-aed9-4e125650e461",
+              "targetStep": "/api/3/workflow_steps/9dc8dd5c-5fb8-408c-8c81-c782a12f5ee5"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "afaaba0a-2c69-4ecb-a47b-4f93f745e854",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Retrieve details of a cluster, including the display name of the cluster in the Tanzu Service Mesh user interface, the version of Kubernetes on the cluster, and its operational status.",
+          "name": "Get Clusters Details",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/ccc564f2-b0a0-462b-9e17-62eb41d29482",
+          "steps": [
+            {
+              "uuid": "ccc564f2-b0a0-462b-9e17-62eb41d29482",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "4abdecde-5a18-4e01-ab5b-504343cd6eff",
+                "title": "VMware Tanzu Service Mesh: Get Clusters Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "ee9b2c8a-3193-452c-93cf-7ba3483ed506",
+              "@type": "WorkflowStep",
+              "name": "Get Clusters Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "get_cluster_details",
+                "operationTitle": "Get Clusters Details",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "c0614fae-9a6b-4594-a5c9-07d983772436",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Clusters Details",
+              "sourceStep": "/api/3/workflow_steps/ccc564f2-b0a0-462b-9e17-62eb41d29482",
+              "targetStep": "/api/3/workflow_steps/ee9b2c8a-3193-452c-93cf-7ba3483ed506"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "5f418f6e-da5c-404d-b1d9-29fe5e615feb",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Retrieve the URL of a registration YAML file. You use this YAML file to register a cluster with Tanzu Service Mesh during onboarding.",
+          "name": "Get Cluster Onboard URL",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/ca4e9c07-6595-4a36-9746-91dfcc9fca59",
+          "steps": [
+            {
+              "uuid": "ca4e9c07-6595-4a36-9746-91dfcc9fca59",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "e6a8194c-2b87-4a3c-b834-d5d8e53dffba",
+                "title": "VMware Tanzu Service Mesh: Get Cluster Onboard URL",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "37f94c9b-f123-4306-bb55-de55ba692d2a",
+              "@type": "WorkflowStep",
+              "name": "Get Cluster Onboard URL",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "get_cluster_onboard_url",
+                "operationTitle": "Get Cluster Onboard URL",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "4e14c161-a59a-45bd-8072-4227f7f8b763",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Cluster Onboard URL",
+              "sourceStep": "/api/3/workflow_steps/ca4e9c07-6595-4a36-9746-91dfcc9fca59",
+              "targetStep": "/api/3/workflow_steps/37f94c9b-f123-4306-bb55-de55ba692d2a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "0d76b79c-ef5c-4d62-9252-661024837118",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Retrieve the version of Tanzu Service Mesh installed on a cluster, the state of the Tanzu Service Mesh installation, and a list of the versions of Tanzu Service Mesh that are available to upgrade the cluster to.",
+          "name": "Get Tanzu Service Mesh Version",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/e2bf9e53-4794-4ba0-a418-41b3bb686e22",
+          "steps": [
+            {
+              "uuid": "e2bf9e53-4794-4ba0-a418-41b3bb686e22",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "374b86ba-2c48-4aca-9054-0fbf0ffcf3dd",
+                "title": "VMware Tanzu Service Mesh: Get Tanzu Service Mesh Version",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "915a152c-2053-4b22-b834-b56e65849c19",
+              "@type": "WorkflowStep",
+              "name": "Get Tanzu Service Mesh Version",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "get_tanzu_service_mesh_version",
+                "operationTitle": "Get Tanzu Service Mesh Version",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "7fddfbc1-8d9f-4f4b-a688-7a3cca02d4aa",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Tanzu Service Mesh Version",
+              "sourceStep": "/api/3/workflow_steps/e2bf9e53-4794-4ba0-a418-41b3bb686e22",
+              "targetStep": "/api/3/workflow_steps/915a152c-2053-4b22-b834-b56e65849c19"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ea559af8-4db0-478f-8a38-9658e9d352f6",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Schedule the fetching of logs of a specified type from a cluster.",
+          "name": "Get Cluster Logs",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/63145810-67ab-4cb2-91d9-d26f23c12654",
+          "steps": [
+            {
+              "uuid": "63145810-67ab-4cb2-91d9-d26f23c12654",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "653152fe-ee8e-409a-97c6-85c4d9976add",
+                "title": "VMware Tanzu Service Mesh: Get Cluster Logs",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "9f7112aa-67f5-4887-b068-d3a440c0bb00",
+              "@type": "WorkflowStep",
+              "name": "Get Cluster Logs",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "get_cluster_logs",
+                "operationTitle": "Get Cluster Logs",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "29de0d04-8a4f-4b97-aa00-b701fea76f70",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Cluster Logs",
+              "sourceStep": "/api/3/workflow_steps/63145810-67ab-4cb2-91d9-d26f23c12654",
+              "targetStep": "/api/3/workflow_steps/9f7112aa-67f5-4887-b068-d3a440c0bb00"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "67c2de4a-0548-455f-a670-6e337ed99420",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Updates an cluster in VMware Tanzu Service Mesh based on the cluster ID and other input parameters that you have specified.",
+          "name": "Update Cluster",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/a6d88146-8cab-4dd6-b28d-2d0dde8727f0",
+          "steps": [
+            {
+              "uuid": "a6d88146-8cab-4dd6-b28d-2d0dde8727f0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "177c2492-df9d-4af8-ace0-36e159fa8447",
+                "title": "VMware Tanzu Service Mesh: Update Cluster",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "2d8f1926-867c-49b8-bc26-27c15b4fd28a",
+              "@type": "WorkflowStep",
+              "name": "Update Cluster",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": {
+                  "autoInstallServiceMesh": true
+                },
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "update_cluster",
+                "operationTitle": "Update Cluster",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "128affc0-f921-4ef7-bc70-529bbe7b93e5",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Cluster",
+              "sourceStep": "/api/3/workflow_steps/a6d88146-8cab-4dd6-b28d-2d0dde8727f0",
+              "targetStep": "/api/3/workflow_steps/2d8f1926-867c-49b8-bc26-27c15b4fd28a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "1a8d9197-0c95-4b6e-9a70-94c54e437cd7",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Remove a cluster from Tanzu Service Mesh based on the cluster ID that you have specified.",
+          "name": "Remove Cluster from Tanzu Service Mesh",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/6127f321-9682-46a3-84c2-1d911608c271",
+          "steps": [
+            {
+              "uuid": "6127f321-9682-46a3-84c2-1d911608c271",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "0e0ce95b-116e-470c-b730-c1e668c32938",
+                "title": "VMware Tanzu Service Mesh: Remove Cluster from Tanzu Service Mesh",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "2e25a35b-e3c7-496e-8cfd-d9e5a999138d",
+              "@type": "WorkflowStep",
+              "name": "Remove Cluster from Tanzu Service Mesh",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "remove_cluster_from_tanzu_service_mesh",
+                "operationTitle": "Remove Cluster from Tanzu Service Mesh",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f8c46c32-f221-47b6-9edd-e8d7a95278ce",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Remove Cluster from Tanzu Service Mesh",
+              "sourceStep": "/api/3/workflow_steps/6127f321-9682-46a3-84c2-1d911608c271",
+              "targetStep": "/api/3/workflow_steps/2e25a35b-e3c7-496e-8cfd-d9e5a999138d"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9529947e-c335-48a9-bd87-849838045c2f",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Uninstall Tanzu Service Mesh from a cluster based on the cluster ID that you have specified.",
+          "name": "Uninstall Tanzu Service Mesh from Cluster",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3e051ac0-0b08-47bc-9010-ca1b9868d808",
+          "steps": [
+            {
+              "uuid": "3e051ac0-0b08-47bc-9010-ca1b9868d808",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "9ad150a0-1cce-4f92-92b0-703d1a8903dc",
+                "title": "VMware Tanzu Service Mesh: Uninstall Tanzu Service Mesh from Cluster",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "45de27b7-5952-4c7a-9e1e-46bf1bf16df6",
+              "@type": "WorkflowStep",
+              "name": "Uninstall Tanzu Service Mesh from Cluster",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "uninstall_tanzu_service_mesh_from_cluster",
+                "operationTitle": "Uninstall Tanzu Service Mesh from Cluster",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f0e48875-0b38-4aa9-8d8d-1f5d31791588",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Uninstall Tanzu Service Mesh from Cluster",
+              "sourceStep": "/api/3/workflow_steps/3e051ac0-0b08-47bc-9010-ca1b9868d808",
+              "targetStep": "/api/3/workflow_steps/45de27b7-5952-4c7a-9e1e-46bf1bf16df6"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "7154d243-379c-421f-ab92-088d46a83499",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Creates an global namespace in VMware Tanzu Service Mesh based on the name and other input parameters that you have specified.",
+          "name": "Create Global Namespace",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/0b456fbd-04b3-45f3-a785-9230d7958eb8",
+          "steps": [
+            {
+              "uuid": "0b456fbd-04b3-45f3-a785-9230d7958eb8",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "52787182-8465-4c04-8745-61f970777cf3",
+                "title": "VMware Tanzu Service Mesh: Create Global Namespace",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "b6239876-1683-4902-ba31-832b5afd5d57",
+              "@type": "WorkflowStep",
+              "name": "Create Global Namespace",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": {
+                  "mtls_enforced": true,
+                  "ca_type": "PreExistingCA"
+                },
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "create_global_namespace",
+                "operationTitle": "Create Global Namespace",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "cf740157-d5f7-47e0-a446-0a9e51aebff3",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Global Namespace",
+              "sourceStep": "/api/3/workflow_steps/0b456fbd-04b3-45f3-a785-9230d7958eb8",
+              "targetStep": "/api/3/workflow_steps/b6239876-1683-4902-ba31-832b5afd5d57"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d196ee18-bb14-4b22-96f9-9fa9f8775b98",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Retrieve a list of the IDs of defined global namespaces from VMware Tanzu Service Mesh server.",
+          "name": "Get Global Namespaces",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2d89850a-f800-4459-b0e4-d62b3c551144",
+          "steps": [
+            {
+              "uuid": "2d89850a-f800-4459-b0e4-d62b3c551144",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "dbadd99c-ba62-4a90-a814-44d546240cb6",
+                "title": "VMware Tanzu Service Mesh: Get Global Namespaces",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "a94ea427-5107-4252-a353-020f3c6c37c1",
+              "@type": "WorkflowStep",
+              "name": "Get Global Namespaces",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "get_global_namespaces",
+                "operationTitle": "Get Global Namespaces",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "810b4825-84d8-4bca-8710-8399f1017969",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Global Namespaces",
+              "sourceStep": "/api/3/workflow_steps/2d89850a-f800-4459-b0e4-d62b3c551144",
+              "targetStep": "/api/3/workflow_steps/a94ea427-5107-4252-a353-020f3c6c37c1"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "6e8ec7b2-e464-4a3f-acab-4915c685c1a0",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Retrieve the configuration of a global namespace based on the global namespace ID that you have specified.",
+          "name": "Get Global Namespace Details",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/13cde53a-6fe7-4c4e-83f7-dfccc22062b2",
+          "steps": [
+            {
+              "uuid": "13cde53a-6fe7-4c4e-83f7-dfccc22062b2",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "6b775307-3a7a-4dce-9d11-bb9c1b9fe6ec",
+                "title": "VMware Tanzu Service Mesh: Get Global Namespace Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "4c628638-82fa-4fdd-baf8-dda4b66e6455",
+              "@type": "WorkflowStep",
+              "name": "Get Global Namespace Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "get_global_namespace_details",
+                "operationTitle": "Get Global Namespace Details",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "fdd8adc9-b719-4022-9a38-2c59571a20bd",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Global Namespace Details",
+              "sourceStep": "/api/3/workflow_steps/13cde53a-6fe7-4c4e-83f7-dfccc22062b2",
+              "targetStep": "/api/3/workflow_steps/4c628638-82fa-4fdd-baf8-dda4b66e6455"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "f5e1ac59-03a9-405b-9011-97839b572c0f",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Retrieve a list of capabilities enabled for a global namespace and their statuses based on the global namespace ID that you have specified.",
+          "name": "Get Capabilities Enabled for Global Namespace",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/cec675c6-c78e-4838-b344-4cc6bc0c2d01",
+          "steps": [
+            {
+              "uuid": "cec675c6-c78e-4838-b344-4cc6bc0c2d01",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "26bfb739-3061-4f21-a911-3df16395651c",
+                "title": "VMware Tanzu Service Mesh: Get Capabilities Enabled for Global Namespace",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "00c61839-d8c8-4f45-8930-fc3c6b9d6d8d",
+              "@type": "WorkflowStep",
+              "name": "Get Capabilities Enabled for Global Namespace",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "get_capabilities_enabled_for_global_namespace",
+                "operationTitle": "Get Capabilities Enabled for Global Namespace",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "a2cd5dfc-f640-4e51-811a-44ee505ce6b7",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Capabilities Enabled for Global Namespace",
+              "sourceStep": "/api/3/workflow_steps/cec675c6-c78e-4838-b344-4cc6bc0c2d01",
+              "targetStep": "/api/3/workflow_steps/00c61839-d8c8-4f45-8930-fc3c6b9d6d8d"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "e2e7b22c-e96d-4a8f-acb5-9f44a83b6a59",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Retrieve the status of a specified capability enabled for a global namespace based on the global namespace ID and capability that you have specified.",
+          "name": "Get Status for Capability Enabled for Global Namespace",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/4736e44c-fbf4-4f04-8cca-cd71446b5751",
+          "steps": [
+            {
+              "uuid": "4736e44c-fbf4-4f04-8cca-cd71446b5751",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "bb0bd164-e714-4106-84ce-877631ac8759",
+                "title": "VMware Tanzu Service Mesh: Get Status for Capability Enabled for Global Namespace",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "8915fdcd-f917-4598-9a72-a789bb014516",
+              "@type": "WorkflowStep",
+              "name": "Get Status for Capability Enabled for Global Namespace",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "get_status_for_capability_enabled_for_global_namespace",
+                "operationTitle": "Get Status for Capability Enabled for Global Namespace",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "1cb1755f-706a-4bbb-8032-2398b8e1c6f5",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Status for Capability Enabled for Global Namespace",
+              "sourceStep": "/api/3/workflow_steps/4736e44c-fbf4-4f04-8cca-cd71446b5751",
+              "targetStep": "/api/3/workflow_steps/8915fdcd-f917-4598-9a72-a789bb014516"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9de7cbe5-bb67-4ccd-b3fe-9a3877edbcbb",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Retrieve a list of the member services in a global namespace based on the global namespace ID that you have specified.",
+          "name": "Get Member Services in Global Namespace",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2c0a723f-232a-4a9f-b7ad-a09f7c46bce0",
+          "steps": [
+            {
+              "uuid": "2c0a723f-232a-4a9f-b7ad-a09f7c46bce0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "1d903ee5-e2e7-43cf-85c6-642a51af3677",
+                "title": "VMware Tanzu Service Mesh: Get Member Services in Global Namespace",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "44470ba1-4793-4568-b9a3-302c0372af31",
+              "@type": "WorkflowStep",
+              "name": "Get Member Services in Global Namespace",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "get_member_services_in_global_namespace",
+                "operationTitle": "Get Member Services in Global Namespace",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "5b0ca919-9b27-4953-90f6-396111a88aac",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Member Services in Global Namespace",
+              "sourceStep": "/api/3/workflow_steps/2c0a723f-232a-4a9f-b7ad-a09f7c46bce0",
+              "targetStep": "/api/3/workflow_steps/44470ba1-4793-4568-b9a3-302c0372af31"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "703021a3-15de-4cb9-bc25-ea94ff2badf5",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Update an global namespace in VMware Tanzu Service Mesh based on the cluster ID and other input parameters that you have specified.",
+          "name": "Update Global Namespace",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/9665c766-7344-4015-8921-0e82f62f5830",
+          "steps": [
+            {
+              "uuid": "9665c766-7344-4015-8921-0e82f62f5830",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "667f60e5-a60d-47ba-a159-30ffefe88a93",
+                "title": "VMware Tanzu Service Mesh: Update Global Namespace",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "c6d391aa-a36b-40a3-98d4-38f83c628929",
+              "@type": "WorkflowStep",
+              "name": "Update Global Namespace",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": {
+                  "mtls_enforced": true,
+                  "ca_type": "PreExistingCA"
+                },
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "update_global_namespace",
+                "operationTitle": "Update Global Namespace",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "9eab3767-f482-42b7-8f31-65368c24039e",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Global Namespace",
+              "sourceStep": "/api/3/workflow_steps/9665c766-7344-4015-8921-0e82f62f5830",
+              "targetStep": "/api/3/workflow_steps/c6d391aa-a36b-40a3-98d4-38f83c628929"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "6c1ca70e-ff36-4392-ae14-839aaec49de1",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Delete a global namespace in VMware Tanzu Service Mesh based on the global namespace ID that you have specified.",
+          "name": "Delete Global Namespace",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/96d769fc-5ea4-4e6f-985c-7af88cb5e9e8",
+          "steps": [
+            {
+              "uuid": "96d769fc-5ea4-4e6f-985c-7af88cb5e9e8",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "7ab999ed-eef5-40d1-a132-f1edc844e07b",
+                "title": "VMware Tanzu Service Mesh: Delete Global Namespace",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "ea6e77c6-77e7-4462-9040-e07fc3ebf488",
+              "@type": "WorkflowStep",
+              "name": "Delete Global Namespace",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "delete_global_namespace",
+                "operationTitle": "Delete Global Namespace",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "3bcc8208-2f5d-429c-be7d-5250efde114c",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Global Namespace",
+              "sourceStep": "/api/3/workflow_steps/96d769fc-5ea4-4e6f-985c-7af88cb5e9e8",
+              "targetStep": "/api/3/workflow_steps/ea6e77c6-77e7-4462-9040-e07fc3ebf488"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "90d4173f-ef2a-45ea-8bba-d84e8b8ce527",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Retrieve a list of jobs from VMware Tanzu Service Mesh server.",
+          "name": "Get Jobs List",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/fa14b16d-ef2c-4369-a408-3de748ff05ac",
+          "steps": [
+            {
+              "uuid": "fa14b16d-ef2c-4369-a408-3de748ff05ac",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "73b7b567-1950-4a06-a863-2f8966500fc1",
+                "title": "VMware Tanzu Service Mesh: Get Jobs List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "c1df318d-6a17-42a3-9ae3-caf38d93b27c",
+              "@type": "WorkflowStep",
+              "name": "Get Jobs List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "get_jobs",
+                "operationTitle": "Get Jobs List",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "fc90471f-6356-48d9-9c9d-34e7f81e0251",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Jobs List",
+              "sourceStep": "/api/3/workflow_steps/fa14b16d-ef2c-4369-a408-3de748ff05ac",
+              "targetStep": "/api/3/workflow_steps/c1df318d-6a17-42a3-9ae3-caf38d93b27c"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "22584203-a6c7-49ad-9102-e775bd3a57c7",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Retrieve the details of a job, including the status of a job based on the job ID that you have specified.",
+          "name": "Get Job Details",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/be9f7fd0-c6b6-43df-b573-382822102e47",
+          "steps": [
+            {
+              "uuid": "be9f7fd0-c6b6-43df-b573-382822102e47",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "7d79e853-f527-41af-b5ec-90e805db109d",
+                "title": "VMware Tanzu Service Mesh: Get Job Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "9519218e-ef31-4503-957a-0ba37674ad53",
+              "@type": "WorkflowStep",
+              "name": "Get Job Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "get_job_details",
+                "operationTitle": "Get Job Details",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "16a9a418-7efc-4698-88e0-04b574f04719",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Job Details",
+              "sourceStep": "/api/3/workflow_steps/be9f7fd0-c6b6-43df-b573-382822102e47",
+              "targetStep": "/api/3/workflow_steps/9519218e-ef31-4503-957a-0ba37674ad53"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "3b40e1c7-6afd-4a93-8983-5f24508c220a",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Download a job based on the job ID that you have specified.",
+          "name": "Download Job",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/dc55893f-319d-4f0c-9392-038140ca3f71",
+          "steps": [
+            {
+              "uuid": "dc55893f-319d-4f0c-9392-038140ca3f71",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "706f7cfb-cc97-4bba-b2a9-b5685cbb517d",
+                "title": "VMware Tanzu Service Mesh: Download Job",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "6faa1579-c308-4ba9-bf12-5b5ab49fb152",
+              "@type": "WorkflowStep",
+              "name": "Download Job",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "download_job",
+                "operationTitle": "Download Job",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "0c448549-3ee0-47ec-9dfa-0ceceeac2b0f",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Download Job",
+              "sourceStep": "/api/3/workflow_steps/dc55893f-319d-4f0c-9392-038140ca3f71",
+              "targetStep": "/api/3/workflow_steps/6faa1579-c308-4ba9-bf12-5b5ab49fb152"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "087820dd-7934-4e08-94f3-e19444515df5",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Delete a job based on the job ID that you have specified.",
+          "name": "Delete Job",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/beb3e07a-6f51-4ed8-bc2b-3a8f9a430059",
+          "steps": [
+            {
+              "uuid": "beb3e07a-6f51-4ed8-bc2b-3a8f9a430059",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "49c17255-c276-41ec-bc51-8bc6138d4420",
+                "title": "VMware Tanzu Service Mesh: Delete Job",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "3a9ccf08-f2bf-4a7a-b37f-2a99a05326b1",
+              "@type": "WorkflowStep",
+              "name": "Delete Job",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "delete_job",
+                "operationTitle": "Delete Job",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "0288ebe2-adcb-422d-87e7-d0dbb4bc9a7c",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Job",
+              "sourceStep": "/api/3/workflow_steps/beb3e07a-6f51-4ed8-bc2b-3a8f9a430059",
+              "targetStep": "/api/3/workflow_steps/3a9ccf08-f2bf-4a7a-b37f-2a99a05326b1"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d0e11c03-a330-44fa-ae10-c190f125fbad",
+          "collection": "/api/3/workflow_collections/3bd3d15a-b3bb-4d7a-bca7-9e20036c3eb6",
+          "triggerLimit": null,
+          "description": "Retrieve a list of resource groups of a specified type, with configuration details for each group based on the type and other input parameter that you have specified.",
+          "name": "Get Resource Groups",
+          "tag": "#VMware Tanzu Service Mesh",
+          "recordTags": [
+            "Vmware",
+            "vmware-tanzu-service-mesh"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/d2120f5a-b7de-4ac8-8582-672072de8c9f",
+          "steps": [
+            {
+              "uuid": "d2120f5a-b7de-4ac8-8582-672072de8c9f",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "337f4833-e05a-4cad-9347-b4e2e9ac21e2",
+                "title": "VMware Tanzu Service Mesh: Get Resource Groups",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "361c04ae-6cd7-468d-aa78-74909af30e5f",
+              "@type": "WorkflowStep",
+              "name": "Get Resource Groups",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "VMware Tanzu Service Mesh",
+                "config": "''",
+                "params": {
+                  "limit": 100
+                },
+                "version": "1.0.0",
+                "connector": "vmware-tanzu-service-mesh",
+                "operation": "get_resource_groups",
+                "operationTitle": "Get Resource Groups",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "b3300190-7e5f-4f09-98fc-41516f62175f",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Resource Groups",
+              "sourceStep": "/api/3/workflow_steps/d2120f5a-b7de-4ac8-8582-672072de8c9f",
+              "targetStep": "/api/3/workflow_steps/361c04ae-6cd7-468d-aa78-74909af30e5f"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
