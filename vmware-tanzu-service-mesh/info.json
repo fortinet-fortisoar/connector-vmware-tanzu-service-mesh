@@ -10,22 +10,22 @@
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "ingestion_supported": false,
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/vmware-tanzu-service-mesh/624/vmware-tanzu-service-mesh-v1-0-0",
   "configuration": {
     "fields": [
       {
         "title": "Server URL",
         "name": "server_url",
         "type": "text",
-        "description": "The service-based URL to which you will connect and perform the automated operations.",
-        "tooltip": "The service-based URL to which you will connect and perform the automated operations.",
+        "description": "Specify the service-based URL of VMware Tanzu Service Mesh to which you will connect and perform the automated operations.",
+        "tooltip": "Specify the service-based URL of VMware Tanzu Service Mesh to which you will connect and perform the automated operations.",
         "required": true,
         "editable": true,
         "visible": true
       },
       {
         "title": "API Token",
-        "description": "Specify the API Token used to access the FortiNDR Cloud APIs and perform the automated operations.",
+        "description": "Specify the API token configured for your account for using the VMware Tanzu Service Mesh APIs.",
         "type": "password",
         "name": "api_key",
         "required": true,
@@ -48,24 +48,24 @@
     {
       "operation": "create_cluster",
       "title": "Create Cluster",
-      "description": "Creates an cluster in VMware Tanzu Service Mesh based on the cluster ID and other input parameters that you have specified.",
+      "description": "Creates a cluster in VMware Tanzu Service Mesh based on the cluster ID, display name, and other input parameters that you have specified.",
       "category": "investigation",
       "annotation": "create_cluster",
       "enabled": true,
       "parameters": [
         {
           "title": "Cluster ID",
-          "description": "Specify the ID of the cluster based on which you want to create an cluster in VMware Tanzu Service Mesh server.",
+          "description": "Specify the ID of the cluster that you want to create in VMware Tanzu Service Mesh.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "cluster_id",
-          "tooltip": "Specify the ID of the cluster based on which you want to create an cluster in VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the ID of the cluster that you want to create in VMware Tanzu Service Mesh."
         },
         {
           "title": "Display Name",
-          "description": "Specify the name of the cluster based on which you want to create an cluster in VMware Tanzu Service Mesh server.",
+          "description": "Specify the display name of the cluster that you want to create in VMware Tanzu Service Mesh. The display name is used to identify the cluster wherever data appears for the cluster in the Tanzu Service Mesh Console, including the data tables and topology views.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -75,7 +75,7 @@
         },
         {
           "title": "Auto Install ServiceMesh",
-          "description": "Specifies whether to automatically install the default available version of Tanzu Service Mesh on the cluster.",
+          "description": "Select this checkbox to automatically install the default available version of Tanzu Service Mesh on the cluster that you are creating on VMware Tanzu Service Mesh.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -86,33 +86,33 @@
         },
         {
           "title": "Description",
-          "description": "(Optional) Specify the description of the cluster based on which you want to create an cluster in VMware Tanzu Service Mesh server.",
+          "description": "(Optional) Specify the description of the cluster that you want to create in VMware Tanzu Service Mesh.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "description",
-          "tooltip": "(Optional) Specify the description of the cluster based on which you want to create an cluster in VMware Tanzu Service Mesh server."
+          "tooltip": "(Optional) Specify the description of the cluster that you want to create in VMware Tanzu Service Mesh."
         },
         {
           "title": "Enable Namespace Inclusions",
-          "description": "(Optional) It is used to set namespace inclusions and is used with \"Namespace Inclusions\".",
+          "description": "(Optional) Select this checkbox to set namespace inclusions for the cluster that you want to create in VMware Tanzu Service Mesh. This option is used along with \"Namespace Inclusions\".",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "enableNamespaceInclusions",
-          "tooltip": "(Optional) It is used to set namespace inclusions and is used with \"Namespace Inclusions\"."
+          "tooltip": "(Optional) Select this checkbox to set namespace inclusions for the cluster that you want to create in VMware Tanzu Service Mesh. This option is used along with \"Namespace Inclusions\"."
         },
         {
           "title": "Namespace Inclusions",
-          "description": "(Optional) Specify the array is used with enableNamespaceInclusions to define namespace inclusion rules. ",
+          "description": "(Optional)  Specify the array that defines namespace inclusion rules. This array is used if you have enabled namespace inclusions.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "json",
           "name": "namespaceInclusions[]",
-          "tooltip": "(Optional) Specify the array is used with enableNamespace Inclusions to define namespace inclusion rules. "
+          "tooltip": "(Optional)  Specify the array that defines namespace inclusion rules. This array is used if you have enabled namespace inclusions."
         }
       ],
       "output_schema": {}
@@ -120,50 +120,50 @@
     {
       "operation": "generate_security_token_for_cluster",
       "title": "Generate Security Token for Cluster",
-      "description": "Generate a security token for a cluster. This token is used to establish a secure connection between Tanzu Service Mesh and the cluster while the cluster is onboarded.",
+      "description": "Generate a security token for a cluster based on the cluster ID you have specified. This token is used to establish a secure connection between Tanzu Service Mesh and the cluster while the cluster is onboarded.",
       "category": "investigation",
       "annotation": "generate_security_token_for_cluster",
       "enabled": true,
       "parameters": [
         {
           "title": "Cluster ID",
-          "description": "Specify the ID of the cluster based on which you want to generate security token for cluster in VMware Tanzu Service Mesh server.",
+          "description": "Specify the ID of the cluster for which you want to generate the security token. This token is used to establish a secure connection between Tanzu Service Mesh and the cluster while the cluster is onboarded.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "cluster_id",
-          "tooltip": "Specify the ID of the cluster based on which you want to generate security token for cluster in VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the ID of the cluster for which you want to generate the security token. This token is used to establish a secure connection between Tanzu Service Mesh and the cluster while the cluster is onboarded."
         }
       ]
     },
     {
       "operation": "upgrade_tanzu_service_mesh_version_on_cluster",
       "title": "Install/Upgrade Tanzu Service Mesh Version on Cluster",
-      "description": "Install Tanzu Service Mesh or upgrade the version of Tanzu Service Mesh on a cluster. ",
+      "description": "Installs the specified version of Tanzu Service Mesh or pgrades the version of Tanzu Service Mesh to the specified version on a cluster based on the cluster ID and version you have specified.",
       "category": "investigation",
       "annotation": "upgrade_tanzu_service_mesh_version_on_cluster",
       "enabled": true,
       "parameters": [
         {
           "title": "Cluster ID",
-          "description": "Specify the ID of the cluster based on which you want to install/upgrade tanzu service mesh version on cluster in VMware Tanzu Service Mesh server.",
+          "description": "Specify the ID of the cluster on which you want to install or upgrade the specified Tanzu Service Mesh version.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "cluster_id",
-          "tooltip": "Specify the ID of the cluster based on which you want to install/upgrade tanzu service mesh version on cluster in VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the ID of the cluster on which you want to install or upgrade the specified Tanzu Service Mesh version."
         },
         {
           "title": "Version",
-          "description": "(Optional) Specify the version based on which you want to install/upgrade tanzu service mesh version on cluster in VMware Tanzu Service Mesh server.",
+          "description": "(Optional) Specify the version of the Tanzu Service Mesh version that you want to install or upgrade on the specified cluster.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "version",
-          "tooltip": "To install the latest available version of Tanzu Service Mesh on the cluster, set version to default."
+          "tooltip": "(Optional) Specify the version of the Tanzu Service Mesh version that you want to install or upgrade on the specified cluster."
         }
       ],
       "output_schema": {}
@@ -171,7 +171,7 @@
     {
       "operation": "get_clusters",
       "title": "Get Clusters List",
-      "description": "Retrieve a list of the clusters onboarded to Tanzu Service Mesh.",
+      "description": "Retrieves a list of all the clusters onboarded to Tanzu Service Mesh.",
       "category": "investigation",
       "annotation": "get_clusters",
       "enabled": true,
@@ -181,20 +181,20 @@
     {
       "operation": "get_cluster_details",
       "title": "Get Clusters Details",
-      "description": "Retrieve details of a cluster, including the display name of the cluster in the Tanzu Service Mesh user interface, the version of Kubernetes on the cluster, and its operational status.",
+      "description": "Retrieves details of a cluster based on the cluster ID you have specified. Details that are retrieved include the display\nname of the cluster in the Tanzu Service Mesh user interface, the version of Kubernetes on the cluster, its operational status, etc.",
       "category": "investigation",
       "annotation": "get_cluster_details",
       "enabled": true,
       "parameters": [
         {
           "title": "Cluster ID",
-          "description": "Specify the ID of the cluster based on which you want to retrieve cluster details from VMware Tanzu Service Mesh server.",
+          "description": "Specify the ID of the cluster whose details you want to retrieve from the VMware Tanzu Service Mesh server.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "cluster_id",
-          "tooltip": "Specify the ID of the cluster based on which you want to retrieve cluster details from VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the ID of the cluster whose details you want to retrieve from the VMware Tanzu Service Mesh server."
         }
       ],
       "output_schema": {}
@@ -202,7 +202,7 @@
     {
       "operation": "get_cluster_onboard_url",
       "title": "Get Cluster Onboard URL",
-      "description": "Retrieve the URL of a registration YAML file. You use this YAML file to register a cluster with Tanzu Service Mesh during onboarding.",
+      "description": "Retrieves the URL of a registration YAML file. Use this YAML file to register a cluster with Tanzu Service Mesh during onboarding.",
       "category": "investigation",
       "annotation": "get_cluster_onboard_url",
       "enabled": true,
@@ -212,20 +212,20 @@
     {
       "operation": "get_tanzu_service_mesh_version",
       "title": "Get Tanzu Service Mesh Version",
-      "description": "Retrieve the version of Tanzu Service Mesh installed on a cluster, the state of the Tanzu Service Mesh installation, and a list of the versions of Tanzu Service Mesh that are available to upgrade the cluster to.",
+      "description": "Retrieves the version of Tanzu Service Mesh installed on a specific cluster based on the cluster ID you have specified. This action also retrieves details such as the state of the Tanzu Service Mesh installation, and the list of the versions of Tanzu Service Mesh that are available to which you can upgrade the cluster.",
       "category": "investigation",
       "annotation": "get_tanzu_service_mesh_version",
       "enabled": true,
       "parameters": [
         {
           "title": "Cluster ID",
-          "description": "Specify the ID of the cluster based on which you want to retrieve VMware Tanzu Service Mesh version.",
+          "description": "Specify the ID of the cluster whose version you want to retrieve from VMware Tanzu Service Mesh.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "cluster_id",
-          "tooltip": "Specify the ID of the cluster based on which you want to retrieve VMware Tanzu Service Mesh version."
+          "tooltip": "Specify the ID of the cluster whose version you want to retrieve from VMware Tanzu Service Mesh."
         }
       ],
       "output_schema": {}
@@ -233,40 +233,40 @@
     {
       "operation": "get_cluster_logs",
       "title": "Get Cluster Logs",
-      "description": "Schedule the fetching of logs of a specified type from a cluster.",
+      "description": "Fetches logs of a specified type from a specific cluster from VMware Tanzu Service Mesh based on the client ID, type, and optionally the namespace you have specified.",
       "category": "investigation",
       "annotation": "get_cluster_logs",
       "enabled": true,
       "parameters": [
         {
           "title": "Cluster ID",
-          "description": "Specify the ID of the cluster based on which you want to retrieve cluster logs from VMware Tanzu Service Mesh server.",
+          "description": "Specify the ID of the cluster whose cluster logs you want to retrieve from the VMware Tanzu Service Mesh server.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "cluster_id",
-          "tooltip": "Specify the ID of the cluster based on which you want to retrieve cluster logs from VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the ID of the cluster whose cluster logs you want to retrieve from the VMware Tanzu Service Mesh server."
         },
         {
           "title": "Type",
-          "description": "Specify the type based on which you want to retrieve cluster logs from VMware Tanzu Service Mesh server.",
+          "description": "Specify the type based on which you want to retrieve cluster logs from the VMware Tanzu Service Mesh server.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "type",
-          "tooltip": "Specify the type based on which you want to retrieve cluster logs from VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the type based on which you want to retrieve cluster logs from the VMware Tanzu Service Mesh server."
         },
         {
           "title": "Namespace",
-          "description": "Specify the name of a namespace on the cluster based on which you want to retrieve logs only for the namespace from VMware Tanzu Service Mesh server.",
+          "description": "(Optional) Specify the name of a namespace on the cluster to retrieve only those logs that match the specified namespace from the VMware Tanzu Service Mesh server.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "namespace",
-          "tooltip": "Specify the name of a namespace on the cluster based on which you want to retrieve logs only for the namespace from VMware Tanzu Service Mesh server."
+          "tooltip": "(Optional) Specify the name of a namespace on the cluster to retrieve only those logs that match the specified namespace from the VMware Tanzu Service Mesh server."
         }
       ],
       "output_schema": {}
@@ -274,24 +274,24 @@
     {
       "operation": "update_cluster",
       "title": "Update Cluster",
-      "description": "Updates an cluster in VMware Tanzu Service Mesh based on the cluster ID and other input parameters that you have specified.",
+      "description": "Updates a cluster in VMware Tanzu Service Mesh based on the cluster ID, display name, and other input parameters that you have specified.",
       "category": "investigation",
       "annotation": "update_cluster",
       "enabled": true,
       "parameters": [
         {
           "title": "Cluster ID",
-          "description": "Specify the ID of the cluster based on which you want to update an cluster in VMware Tanzu Service Mesh server.",
+          "description": "Specify the ID of the cluster that you want to update in the VMware Tanzu Service Mesh server.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "cluster_id",
-          "tooltip": "Specify the ID of the cluster based on which you want to update an cluster in VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the ID of the cluster that you want to update in the VMware Tanzu Service Mesh server."
         },
         {
           "title": "Display Name",
-          "description": "Specify the name of the cluster based on which you want to update an cluster in VMware Tanzu Service Mesh server.",
+          "description": "Specify the display name of the cluster that you want to update in the VMware Tanzu Service Mesh server.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -301,44 +301,44 @@
         },
         {
           "title": "Auto Install ServiceMesh",
-          "description": "Specifies whether to automatically install the default available version of Tanzu Service Mesh on the cluster.",
+          "description": "Select this checkbox to automatically install the default available version of Tanzu Service Mesh on the cluster that you are updating on the VMware Tanzu Service Mesh server.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "autoInstallServiceMesh",
-          "tooltip": "If you set this parameter to true, the default available version of Tanzu Service Mesh will be installed on the cluster or otherwise you need to specify version in the operation \"Install/Upgrade Tanzu Service Mesh Version on Cluster\".",
+          "tooltip": "Select this checkbox to automatically install the default available version of Tanzu Service Mesh on the cluster that you are updating on the VMware Tanzu Service Mesh server.",
           "value": true
         },
         {
           "title": "Description",
-          "description": "(Optional) Specify the description of the cluster based on which you want to update an cluster in VMware Tanzu Service Mesh server.",
+          "description": "(Optional) Specify the description of the cluster that you want to update in VMware Tanzu Service Mesh.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "description",
-          "tooltip": "(Optional) Specify the description of the cluster based on which you want to update an cluster in VMware Tanzu Service Mesh server."
+          "tooltip": "(Optional) Specify the description of the cluster that you want to update in VMware Tanzu Service Mesh."
         },
         {
           "title": "Enable Namespace Inclusions",
-          "description": "(Optional) It is used to set namespace inclusions and is used with \"Namespace Inclusions\".",
+          "description": "(Optional) Select this checkbox to set namespace inclusions for the cluster that you want to update in VMware Tanzu Service Mesh. This option is used along with \"Namespace Inclusions\".",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "checkbox",
           "name": "enableNamespaceInclusions",
-          "tooltip": "(Optional) It is used to set namespace inclusions and is used with \"Namespace Inclusions\"."
+          "tooltip": "(Optional) Select this checkbox to set namespace inclusions for the cluster that you want to update in VMware Tanzu Service Mesh. This option is used along with \"Namespace Inclusions\"."
         },
         {
           "title": "Namespace Inclusions",
-          "description": "(Optional) Specify the array is used with enableNamespaceInclusions to define namespace inclusion rules. ",
+          "description": "(Optional) Specify the array that defines namespace inclusion rules. This array is used if you have enabled namespace inclusions.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "json",
           "name": "namespaceInclusions[]",
-          "tooltip": "(Optional) Specify the array is used with enableNamespace Inclusions to define namespace inclusion rules. "
+          "tooltip": "(Optional) Specify the array that defines namespace inclusion rules. This array is used if you have enabled namespace inclusions."
         }
       ],
       "output_schema": {}
@@ -346,20 +346,20 @@
     {
       "operation": "remove_cluster_from_tanzu_service_mesh",
       "title": "Remove Cluster from Tanzu Service Mesh",
-      "description": "Remove a cluster from Tanzu Service Mesh based on the cluster ID that you have specified.",
+      "description": "Removes a cluster from Tanzu Service Mesh based on the cluster ID that you have specified.",
       "category": "investigation",
       "annotation": "remove_cluster_from_tanzu_service_mesh",
       "enabled": true,
       "parameters": [
         {
           "title": "Cluster ID",
-          "description": "Specify the ID of the cluster based on which you want to remove cluster from VMware Tanzu Service Mesh.",
+          "description": "Specify the ID of the cluster that you want to remove from the VMware Tanzu Service Mesh server.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "cluster_id",
-          "tooltip": "Specify the ID of the cluster based on which you want to remove cluster from VMware Tanzu Service Mesh."
+          "tooltip": "Specify the ID of the cluster that you want to remove from the VMware Tanzu Service Mesh server."
         }
       ],
       "output_schema": {}
@@ -367,20 +367,20 @@
     {
       "operation": "uninstall_tanzu_service_mesh_from_cluster",
       "title": "Uninstall Tanzu Service Mesh from Cluster",
-      "description": "Uninstall Tanzu Service Mesh from a cluster based on the cluster ID that you have specified.",
+      "description": "Uninstalls the Tanzu Service Mesh from a specific cluster based on the cluster ID that you have specified.",
       "category": "investigation",
       "annotation": "uninstall_tanzu_service_mesh_from_cluster",
       "enabled": true,
       "parameters": [
         {
           "title": "Cluster ID",
-          "description": "Specify the ID of the cluster based on which you want to uninstall cluster from VMware Tanzu Service Mesh.",
+          "description": "Specify the ID of the cluster from which you want to install VMware Tanzu Service Mesh.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "cluster_id",
-          "tooltip": "Specify the ID of the cluster based on which you want to uninstall cluster from VMware Tanzu Service Mesh."
+          "tooltip": "Specify the ID of the cluster from which you want to install VMware Tanzu Service Mesh."
         }
       ],
       "output_schema": {}
@@ -388,14 +388,14 @@
     {
       "operation": "create_global_namespace",
       "title": "Create Global Namespace",
-      "description": "Creates an global namespace in VMware Tanzu Service Mesh based on the name and other input parameters that you have specified.",
+      "description": "Creates a global namespace in VMware Tanzu Service Mesh based on the name, domain name, and other input parameters that you have specified.",
       "category": "investigation",
       "annotation": "create_global_namespace",
       "enabled": true,
       "parameters": [
         {
           "title": "Name",
-          "description": "Specify the internal identifier for the global namespace based on which you want to create an global namespace in VMware Tanzu Service Mesh server.",
+          "description": "Specify the internal identifier for the global namespace that you want to create in the VMware Tanzu Service Mesh server.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -405,7 +405,7 @@
         },
         {
           "title": "Domain Name",
-          "description": "Specify the name for the domain based on which you want to create an global namespace in VMware Tanzu Service Mesh server.",
+          "description": "Specify the name for the domain based on which you want to create a global namespace in the VMware Tanzu Service Mesh server.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -425,7 +425,7 @@
         },
         {
           "title": "Display Name",
-          "description": "Specify the name for the global namespace based on which you want to create an global namespace in VMware Tanzu Service Mesh server.",
+          "description": "(Optional) Specify the name for the global namespace using which you want to create a global namespace in the VMware Tanzu Service Mesh server.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -435,27 +435,27 @@
         },
         {
           "title": "Description",
-          "description": "(Optional) Specify the description for the global namespace based on which you want to create an global namespace in VMware Tanzu Service Mesh server.",
+          "description": "(Optional) Specify the description for the global namespace that you want to create in the VMware Tanzu Service Mesh server.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "description",
-          "tooltip": "(Optional) You can use the description of the global namespace to indicate its purpose or distinguish it from other global namespaces."
+          "tooltip": "(Optional) Specify the description for the global namespace that you want to create in the VMware Tanzu Service Mesh server."
         },
         {
           "title": "Color Code",
-          "description": "(Optional) Specify the color code of the global namespace based on which you want to create an global namespace in VMware Tanzu Service Mesh server.",
+          "description": "(Optional) Specify the color code of the global namespace that you want to create in the VMware Tanzu Service Mesh server.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "color",
-          "tooltip": "(Optional) Specify the color code of the global namespace based on which you want to create an global namespace in VMware Tanzu Service Mesh server."
+          "tooltip": "(Optional) Specify the color code of the global namespace that you want to create in the VMware Tanzu Service Mesh server."
         },
         {
           "title": "Mutual Transport Layer Security",
-          "description": "(Optional) Specifies if Tanzu Service Mesh enforces encryption of all traffic between the services in the global namespace, using Mutual Transport Layer Security authentication (mTLS).",
+          "description": "(Optional) Select this option if you want Tanzu Service Mesh to enforce encryption of all traffic between the services in the global namespace, using Mutual Transport Layer Security authentication (mTLS).",
           "required": false,
           "editable": true,
           "visible": true,
@@ -481,7 +481,7 @@
     {
       "operation": "get_global_namespaces",
       "title": "Get Global Namespaces",
-      "description": "Retrieve a list of the IDs of defined global namespaces from VMware Tanzu Service Mesh server.",
+      "description": "Retrieves a list of the IDs of all the defined global namespaces from the VMware Tanzu Service Mesh server.",
       "category": "investigation",
       "annotation": "get_global_namespaces",
       "enabled": true,
@@ -491,20 +491,20 @@
     {
       "operation": "get_global_namespace_details",
       "title": "Get Global Namespace Details",
-      "description": "Retrieve the configuration of a global namespace based on the global namespace ID that you have specified.",
+      "description": "Retrieves the configuration of a specific global namespace from VMware Tanzu Service Mesh based on the global namespace ID that you have specified.",
       "category": "investigation",
       "annotation": "get_global_namespace_details",
       "enabled": true,
       "parameters": [
         {
           "title": "Global Namespace ID",
-          "description": "Specify the ID of the global namespace based on which you want to retrieve configuration of a global namespace from VMware Tanzu Service Mesh server.",
+          "description": "Specify the ID of the global namespace whose configuration details you want to retrieve from VMware Tanzu Service Mesh.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "global_namespace_id",
-          "tooltip": "Specify the ID of the global namespace based on which you want to retrieve configuration of a global namespace from VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the ID of the global namespace whose configuration details you want to retrieve from VMware Tanzu Service Mesh."
         }
       ],
       "output_schema": {}
@@ -512,20 +512,20 @@
     {
       "operation": "get_capabilities_enabled_for_global_namespace",
       "title": "Get Capabilities Enabled for Global Namespace",
-      "description": "Retrieve a list of capabilities enabled for a global namespace and their statuses based on the global namespace ID that you have specified.",
+      "description": "Retrieves a list of capabilities enabled for a specific global namespace and their statuses from VMware Tanzu Service Mesh based on the global namespace ID that you have specified.",
       "category": "investigation",
       "annotation": "get_capabilities_enabled_for_global_namespace",
       "enabled": true,
       "parameters": [
         {
           "title": "Global Namespace ID",
-          "description": "Specify the ID of the global namespace based on which you want to retrieve capabilities enabled for a global namespace from VMware Tanzu Service Mesh server.",
+          "description": "Specify the ID of the global namespace whose list of capabilities and their statuses you want to retrieve from VMware Tanzu Service Mesh.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "global_namespace_id",
-          "tooltip": "Specify the ID of the global namespace based on which you want to retrieve capabilities enabled for a global namespace from VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the ID of the global namespace whose list of capabilities and their statuses you want to retrieve from VMware Tanzu Service Mesh."
         }
       ],
       "output_schema": {}
@@ -533,30 +533,30 @@
     {
       "operation": "get_status_for_capability_enabled_for_global_namespace",
       "title": "Get Status for Capability Enabled for Global Namespace",
-      "description": "Retrieve the status of a specified capability enabled for a global namespace based on the global namespace ID and capability that you have specified.",
+      "description": "Retrieves the status of a specified capability enabled for a specific global namespace from VMware Tanzu Service Mesh based on the global namespace ID and capability that you have specified.",
       "category": "investigation",
       "annotation": "get_status_for_capability_enabled_for_global_namespace",
       "enabled": true,
       "parameters": [
         {
           "title": "Global Namespace ID",
-          "description": "Specify the ID of the global namespace based on which you want to retrieve status of a specified capability enabled from VMware Tanzu Service Mesh server.",
+          "description": "Specify the ID of the global namespace for which you want to retrieve the status of a specified enabled capability from VMware Tanzu Service Mesh.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "global_namespace_id",
-          "tooltip": "Specify the ID of the global namespace based on which you want to retrieve status of a specified capability enabled from VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the ID of the global namespace for which you want to retrieve the status of a specified enabled capability from VMware Tanzu Service Mesh."
         },
         {
           "title": "Capability",
-          "description": "Specify the capability based on which you want to retrieve status of a specified capability enabled from VMware Tanzu Service Mesh server.",
+          "description": "Specify the enabled capability whose status you want to retrieve from VMware Tanzu Service Mesh.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "capability",
-          "tooltip": "Specify the capability based on which you want to retrieve status of a specified capability enabled from VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the enabled capability whose status you want to retrieve from VMware Tanzu Service Mesh."
         }
       ],
       "output_schema": {}
@@ -564,20 +564,20 @@
     {
       "operation": "get_member_services_in_global_namespace",
       "title": "Get Member Services in Global Namespace",
-      "description": "Retrieve a list of the member services in a global namespace based on the global namespace ID that you have specified.",
+      "description": "Retrieves a list of the member services in a specific global namespace from VMware Tanzu Service Mesh based on the global namespace ID that you have specified.",
       "category": "investigation",
       "annotation": "get_member_services_in_global_namespace",
       "enabled": true,
       "parameters": [
         {
           "title": "Global Namespace ID",
-          "description": "Specify the ID of the global namespace based on which you want to retrieve member services in a global namespace from VMware Tanzu Service Mesh server.",
+          "description": "Specify the ID of the global namespace whose member services you want to retrieve from VMware Tanzu Service Mesh.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "global_namespace_id",
-          "tooltip": "Specify the ID of the global namespace based on which you want to retrieve member services in a global namespace from VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the ID of the global namespace whose member services you want to retrieve from VMware Tanzu Service Mesh."
         }
       ],
       "output_schema": {}
@@ -585,20 +585,20 @@
     {
       "operation": "update_global_namespace",
       "title": "Update Global Namespace",
-      "description": "Update an global namespace in VMware Tanzu Service Mesh based on the cluster ID and other input parameters that you have specified.",
+      "description": "Updates a global namespace in VMware Tanzu Service Mesh based on the global namespace ID and other input parameters that you have specified.",
       "category": "investigation",
       "annotation": "update_global_namespace",
       "enabled": true,
       "parameters": [
         {
           "title": "Global Namespace ID",
-          "description": "Specify the ID of the global namespace based on which you want to update global namespace in VMware Tanzu Service Mesh server.",
+          "description": "Specify the internal identifier for the global namespace that you want to update in the VMware Tanzu Service Mesh server.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "global_namespace_id",
-          "tooltip": "Specify the ID of the global namespace based on which you want to update global namespace in VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the internal identifier for the global namespace that you want to update in the VMware Tanzu Service Mesh server."
         },
         {
           "title": "Match Conditions",
@@ -612,7 +612,7 @@
         },
         {
           "title": "Display Name",
-          "description": "Specify the name for the global namespace based on which you want to update an global namespace in VMware Tanzu Service Mesh server.",
+          "description": "Specify the name for the global namespace using which you want to update a global namespace in the VMware Tanzu Service Mesh server",
           "required": false,
           "editable": true,
           "visible": true,
@@ -622,27 +622,27 @@
         },
         {
           "title": "Description",
-          "description": "(Optional) Specify the description for the global namespace based on which you want to update an global namespace in VMware Tanzu Service Mesh server.",
+          "description": "(Optional) Specify the description for the global namespace that you want to update in the VMware Tanzu Service Mesh server.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "description",
-          "tooltip": "(Optional) You can use the description of the global namespace to indicate its purpose or distinguish it from other global namespaces."
+          "tooltip": "(Optional) Specify the description for the global namespace that you want to update in the VMware Tanzu Service Mesh server."
         },
         {
           "title": "Color Code",
-          "description": "(Optional) Specify the color code of the global namespace based on which you want to update an global namespace in VMware Tanzu Service Mesh server.",
+          "description": "(Optional) Specify the color code of the global namespace that you want to update in the VMware Tanzu Service Mesh server.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "color",
-          "tooltip": "(Optional) Specify the color code of the global namespace based on which you want to update an global namespace in VMware Tanzu Service Mesh server."
+          "tooltip": "(Optional) Specify the color code of the global namespace that you want to update in the VMware Tanzu Service Mesh server."
         },
         {
           "title": "Mutual Transport Layer Security",
-          "description": "(Optional) Specifies if Tanzu Service Mesh enforces encryption of all traffic between the services in the global namespace, using Mutual Transport Layer Security authentication (mTLS).",
+          "description": "(Optional) Select this option if you want Tanzu Service Mesh to enforce encryption of all traffic between the services in the global namespace, using Mutual Transport Layer Security authentication (mTLS).",
           "required": false,
           "editable": true,
           "visible": true,
@@ -653,7 +653,7 @@
         },
         {
           "title": "Certificate Authority Type",
-          "description": "(Optional) Specify the type of certificate authority, each global namespace uses a certificate authority (CA) that provisions identities for the services inside that global namespace.",
+          "description": "(Optional) Specify the type of certificate authority to be used by the global namespace that you want to update in the VMware Tanzu Service Mesh server. Each global namespace uses a certificate authority (CA) that provisions identities for the services inside that global namespace. Note: If you do not specify any CA, then by default, \"PreExisting CA\" is set for the CA Type.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -668,20 +668,20 @@
     {
       "operation": "delete_global_namespace",
       "title": "Delete Global Namespace",
-      "description": "Delete a global namespace in VMware Tanzu Service Mesh based on the global namespace ID that you have specified.",
+      "description": "Deletes a global namespace from VMware Tanzu Service Mesh based on the global namespace ID that you have specified.",
       "category": "investigation",
       "annotation": "delete_global_namespace",
       "enabled": true,
       "parameters": [
         {
           "title": "Global Namespace ID",
-          "description": "Specify the ID of the global namespace based on which you want to delete a global namespace in VMware Tanzu Service Mesh server.",
+          "description": "Specify the ID of the global namespace that you want to delete from the VMware Tanzu Service Mesh server.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "global_namespace_id",
-          "tooltip": "Specify the ID of the global namespace based on which you want to delete a global namespace in VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the ID of the global namespace that you want to delete from the VMware Tanzu Service Mesh server."
         }
       ],
       "output_schema": {}
@@ -689,7 +689,7 @@
     {
       "operation": "get_jobs",
       "title": "Get Jobs List",
-      "description": "Retrieve a list of jobs from VMware Tanzu Service Mesh server.",
+      "description": "Retrieves a list of all obs from the VMware Tanzu Service Mesh server.",
       "category": "investigation",
       "annotation": "get_jobs",
       "enabled": true,
@@ -699,20 +699,20 @@
     {
       "operation": "get_job_details",
       "title": "Get Job Details",
-      "description": "Retrieve the details of a job, including the status of a job based on the job ID that you have specified.",
+      "description": "Retrieve the details of a job, including the status of a job, from the VMware Tanzu Service Mesh server based on the job ID that you have specified.",
       "category": "investigation",
       "annotation": "get_job_details",
       "enabled": true,
       "parameters": [
         {
           "title": "Job ID",
-          "description": "Specify the ID of the job based on which you want to retrieve job details from VMware Tanzu Service Mesh server.",
+          "description": "Specify the ID of the job whose details including its status you want to retrieve from the VMware Tanzu Service Mesh server.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "job_id",
-          "tooltip": "Specify the ID of the job based on which you want to retrieve job details from VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the ID of the job whose details including its status you want to retrieve from the VMware Tanzu Service Mesh server."
         }
       ],
       "output_schema": {}
@@ -720,20 +720,20 @@
     {
       "operation": "download_job",
       "title": "Download Job",
-      "description": "Download a job based on the job ID that you have specified.",
+      "description": "Downloads a job from the VMware Tanzu Service Mesh server based on the job ID that you have specified.",
       "category": "investigation",
       "annotation": "download_job",
       "enabled": true,
       "parameters": [
         {
           "title": "Job ID",
-          "description": "Specify the ID of the job based on which you want to download job details from VMware Tanzu Service Mesh server.",
+          "description": "Specify the ID of the job that you want to download job from the VMware Tanzu Service Mesh server.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "job_id",
-          "tooltip": "Specify the ID of the job based on which you want to download job details from VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the ID of the job that you want to download job from the VMware Tanzu Service Mesh server."
         }
       ],
       "output_schema": {}
@@ -741,20 +741,20 @@
     {
       "operation": "delete_job",
       "title": "Delete Job",
-      "description": "Delete a job based on the job ID that you have specified.",
+      "description": "Delete a job from the VMware Tanzu Service Mesh server based on the job ID that you have specified.",
       "category": "investigation",
       "annotation": "delete_job",
       "enabled": true,
       "parameters": [
         {
           "title": "Job ID",
-          "description": "Specify the ID of the job based on which you want to delete an job from VMware Tanzu Service Mesh server.",
+          "description": "Specify the ID of the job that you want to delete from the VMware Tanzu Service Mesh server.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "job_id",
-          "tooltip": "Specify the ID of the job based on which you want to delete an job from VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the ID of the job that you want to delete from the VMware Tanzu Service Mesh server."
         }
       ],
       "output_schema": {}
@@ -762,24 +762,24 @@
     {
       "operation": "get_resource_groups",
       "title": "Get Resource Groups",
-      "description": "Retrieve a list of resource groups of a specified type, with configuration details for each group based on the type and other input parameter that you have specified.",
+      "description": "Retrieves a list of resource groups of a specific type, with configuration details for each group based on the resource group type and other input parameters that you have specified.",
       "category": "investigation",
       "annotation": "get_resource_groups",
       "enabled": true,
       "parameters": [
         {
           "title": "Resource Group Type",
-          "description": "Specify the type of the resource group based on which you want to retrieve resource groups from VMware Tanzu Service Mesh server.",
+          "description": "Specify the type of resource group that you want to retrieve from the VMware Tanzu Service Mesh server.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "type",
-          "tooltip": "Specify the type of the resource group based on which you want to retrieve resource groups from VMware Tanzu Service Mesh server."
+          "tooltip": "Specify the type of resource group that you want to retrieve from the VMware Tanzu Service Mesh server."
         },
         {
           "title": "Next Cursor",
-          "description": "A cursor for use in pagination. Enter the name of the starting resource group to return on the response. If you leave this parameter blank, the response will begin with the details for the first resource group in the result list.",
+          "description": "(Optional) A cursor is used in pagination. Specify the name of the starting resource group that you want this operation to return in the response. If you leave this parameter blank, then the response will begin with the details for the first resource group in the result list.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -789,13 +789,13 @@
         },
         {
           "title": "Limit",
-          "description": "Define the the maximum number of resource groups to return per page, the default limit of 100 will be applied.",
+          "description": "(Optional) Specify the maximum number of resource groups to return per page. By default, the limit is set to 100.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "limit",
-          "tooltip": "Define the the maximum number of resource groups to return per page, the default limit of 100 will be applied.",
+          "tooltip": "(Optional) Specify the maximum number of resource groups to return per page. By default, the limit is set to 100.",
           "value": 100
         }
       ],
